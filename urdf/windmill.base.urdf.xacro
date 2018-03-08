@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+
+
+<robot name="windmill" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:property name="PI" value="3.14" />
+
+  <link name="world"></link>
+
+    <!--_____________________________________________________________-->
+    <!--LINK1 windmill base-->
+    <!--_____________________________________________________________-->
+    <link name='link_windmill_base'>
+      
+      <inertial>
+        <mass value="50" />
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <inertia
+          ixx="6.71747915" ixy="0.00002148" ixz="-0.00000024"
+          iyx="0.00002148" iyy="0.03933251" iyz="-0.17180670"
+          izx="-0.00000024" izy="0" izz="6.71747915"/>
+      </inertial>
+            
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://mmuav_description/meshes/windmill_base.dae"
+            scale="2 2 2" />
+        </geometry>
+      </visual>
+
+      <!--collision name='collision'>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://mmuav_description/meshes/windmill_base.dae"
+            scale="1 1 1" />
+        </geometry>
+      </collision-->
+    </link>
+
+    <!--_____________________________________________________________-->
+    <!--LINK2 windmill rotor-->
+    <!--_____________________________________________________________-->
+    <link name='link_windmill_rotor'>
+      
+      <inertial>
+        <mass value="10" />
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <inertia
+          ixx="0.24721438" ixy="0.00007284" ixz="0.00000045"
+          iyx="0.00007284" iyy="0.24718850" iyz="0.00000183"
+          izx="0.00000045" izy="0.00000183" izz="0.49126955"/>
+      </inertial>
+            
+      <visual>
+        <origin xyz="0.16228 -0.00566 0.1" rpy="0 0 0" />
+        <geometry>
+          <mesh filename="package://mmuav_description/meshes/windmill_rotor.dae"
+            scale="2 2 2" />
+        </geometry>
+      </visual>
+
+      <!--collision name='collision'>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://mmuav_description/meshes/windmill_rotor.dae"
+            scale="1 1 1" />
+        </geometry>
+      </collision-->
+    </link>
+ 
+
+    <!--_____________________________________________________________-->
+    <!--JOINT1 FIXED windmill base-->
+    <!--_____________________________________________________________-->
+    <joint name="joint_windmill_base" type="fixed">
+        <origin xyz="0 0 2.166" rpy="${PI/2} 0 0"/>
+        <parent link="world"/>
+        <child link="link_windmill_base"/>
+    </joint>
+    <!--_____________________________________________________________-->
+    <!--JOINT2 FIXED force_sensor_mount_top-->
+    <!--_____________________________________________________________-->
+    <joint name="joint_windmill_rotor" type="continuous">
+        <origin xyz="0.10024 0.0005 0.07" rpy="0 ${PI/2} 0" />
+        <parent link="link_windmill_base"/>
+        <child link="link_windmill_rotor"/>
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <transmission name="transmission_windmill">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="joint_windmill_rotor">
+         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="motor_windmill">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
+
+</robot>
