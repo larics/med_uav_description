@@ -18,7 +18,7 @@
   <xacro:property name="bag_file" value="windmill.bag" />
 
   <!-- Instantiate mmuav "mechanics" -->
-  <xacro:include filename="$(find mmuav_description)/urdf/windmill.base.urdf.xacro" />
+  <xacro:include filename="$(find med_uav_description)/urdf/windmill.base.urdf.xacro" />
   <xacro:include filename="$(find rotors_description)/urdf/component_snippets.xacro" />
 
 </robot>

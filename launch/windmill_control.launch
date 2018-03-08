@@ -4,7 +4,7 @@
   <arg name="namespace" default="/windmill"/>
  
   <!-- Load joint controller configurations from YAML file to parameter server -->
-  <rosparam file="$(find mmuav_control)/config/windmill.yaml" command="load"/>
+  <rosparam file="$(find med_uav_description)/config/windmill.yaml" command="load"/>
 
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
     output="screen" ns="$(arg namespace)"  args="joint_state_controller
