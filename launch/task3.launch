@@ -1,0 +1,10 @@
+<launch>
+    
+    <!-- Launch UAV with controllers -->
+    <include file="$(find med_uav_description)/launch/gazebo_ardrone.launch"/>
+    <!-- Spawn wind turbine -->
+    <include file="$(find med_uav_description)/launch/spawn_wind_turbine.launch"/>
+    <!-- Start wind turbine control -->
+    <include file="$(find med_uav_description)/launch/wind_turbine_control.launch"/>
+
+</launch>

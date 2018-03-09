@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 
 
-<robot name="windmill" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="wind_turbine" xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:property name="PI" value="3.14" />
 
   <link name="world"></link>
 
     <!--_____________________________________________________________-->
-    <!--LINK1 windmill base-->
+    <!--LINK1 wind_turbine base-->
     <!--_____________________________________________________________-->
-    <link name='link_windmill_base'>
+    <link name='link_wind_turbine_base'>
       
       <inertial>
         <mass value="50" />
@@ -23,7 +23,7 @@
       <visual>
         <origin xyz="0 0 0" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://med_uav_description/meshes/windmill_base.dae"
+          <mesh filename="package://med_uav_description/meshes/wind_turbine_base.dae"
             scale="2 2 2" />
         </geometry>
       </visual>
@@ -31,16 +31,16 @@
       <collision name='collision'>
         <origin xyz="0 0 0" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://med_uav_description/meshes/windmill_base.dae"
+          <mesh filename="package://med_uav_description/meshes/wind_turbine_base.dae"
             scale="2 2 2" />
         </geometry>
       </collision>
     </link>
 
     <!--_____________________________________________________________-->
-    <!--LINK2 windmill rotor-->
+    <!--LINK2 wind_turbine rotor-->
     <!--_____________________________________________________________-->
-    <link name='link_windmill_rotor'>
+    <link name='link_wind_turbine_rotor'>
       
       <inertial>
         <mass value="10" />
@@ -54,7 +54,7 @@
       <visual>
         <origin xyz="0.16228 -0.00566 0.1" rpy="0 0 0" />
         <geometry>
-          <mesh filename="package://med_uav_description/meshes/windmill_rotor.dae"
+          <mesh filename="package://med_uav_description/meshes/wind_turbine_rotor.dae"
             scale="2 2 2" />
         </geometry>
       </visual>
@@ -62,7 +62,7 @@
       <collision name='collision'>
         <origin xyz="0.16228 -0.00566 0.1" rpy="0 0 0"/>
         <geometry>
-          <mesh filename="package://med_uav_description/meshes/windmill_rotor.dae"
+          <mesh filename="package://med_uav_description/meshes/wind_turbine_rotor.dae"
             scale="2 2 2" />
         </geometry>
       </collision>
@@ -70,29 +70,29 @@
  
 
     <!--_____________________________________________________________-->
-    <!--JOINT1 FIXED windmill base-->
+    <!--JOINT1 FIXED wind_turbine base-->
     <!--_____________________________________________________________-->
-    <joint name="joint_windmill_base" type="fixed">
+    <joint name="joint_wind_turbine_base" type="fixed">
         <origin xyz="0 0 2.166" rpy="${PI/2} 0 0"/>
         <parent link="world"/>
-        <child link="link_windmill_base"/>
+        <child link="link_wind_turbine_base"/>
     </joint>
     <!--_____________________________________________________________-->
     <!--JOINT2 FIXED force_sensor_mount_top-->
     <!--_____________________________________________________________-->
-    <joint name="joint_windmill_rotor" type="continuous">
+    <joint name="joint_wind_turbine_rotor" type="continuous">
         <origin xyz="0.10024 0.0005 0.07" rpy="0 ${PI/2} 0" />
-        <parent link="link_windmill_base"/>
-        <child link="link_windmill_rotor"/>
+        <parent link="link_wind_turbine_base"/>
+        <child link="link_wind_turbine_rotor"/>
         <axis xyz="0 0 1" />
     </joint>
 
-    <transmission name="transmission_windmill">
+    <transmission name="transmission_wind_turbine">
       <type>transmission_interface/SimpleTransmission</type>
-      <joint name="joint_windmill_rotor">
+      <joint name="joint_wind_turbine_rotor">
          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
-      <actuator name="motor_windmill">
+      <actuator name="motor_wind_turbine">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>

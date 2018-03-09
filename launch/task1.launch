@@ -1,0 +1,7 @@
+<launch>
+    
+    <!-- Launch UAV with controllers -->
+    <!-- TODO: add wind argument to gazebo_ardrone.launch and turn on the wind in this launch -->
+    <include file="$(find med_uav_description)/launch/gazebo_ardrone.launch"/>
+
+</launch>
