@@ -37,6 +37,26 @@
 		<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
 	</xacro:odometry_plugin_macro>
 
+	<!-- Instantiate a wind plugin -->
+	<gazebo>
+	    <!-- wind plugin -->
+	    <plugin name="wind_plugin" filename="librotors_gazebo_wind_plugin.so">
+	      <robotNamespace>$(arg namespace)/</robotNamespace>
+	      <xyzOffset>0 0 0</xyzOffset>
+	      <frameId>base_link</frameId>
+	      <linkName>base_link</linkName>
+	      <windDirection>1 1 -0.3</windDirection>
+	      <windForceMean>0</windForceMean>
+	      <windForceVariance>0.0</windForceVariance>
+	      <windGustDirection>1 1 -0.3</windGustDirection>
+	      <windGustStart>10</windGustStart>
+	      <windGustDuration>10</windGustDuration>
+	      <windGustForceMean>0</windGustForceMean>
+	      <windGustForceVariance>0</windGustForceVariance>
+	    </plugin>
+	</gazebo>
+
+
     <link name="laser1D_link">
       <inertial>
         <mass value="1e-5" />
