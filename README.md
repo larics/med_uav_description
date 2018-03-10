@@ -1,2 +1,2 @@
 # med_uav_description
-[My Awesome Wiki](../../wiki)
+Instruction can be found on project [Wiki](../../wiki) page
