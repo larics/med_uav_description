@@ -1,6 +1,6 @@
 <launch>
     
-    <!-- Launch UAV with controllers -->
+    <!-- Launch UAV-->
     <include file="$(find med_uav_description)/launch/gazebo_ardrone.launch">
     	<arg name="wind_force" value="0.0"/>
     </include>
