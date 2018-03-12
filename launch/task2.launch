@@ -1,6 +1,9 @@
 <launch>
     
     <!-- Launch UAV with controllers -->
-    <include file="$(find med_uav_description)/launch/gazebo_ardrone.launch"/>
+    <include file="$(find med_uav_description)/launch/gazebo_ardrone.launch">
+    	<!-- Turn off the wind gust for task 2 -->
+    	<arg name="wind_force" value="0.0"/>
+    </include>
 
 </launch>

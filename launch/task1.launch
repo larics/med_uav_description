@@ -1,7 +1,13 @@
 <launch>
     
     <!-- Launch UAV with controllers -->
-    <!-- TODO: add wind argument to gazebo_ardrone.launch and turn on the wind in this launch -->
-    <include file="$(find med_uav_description)/launch/gazebo_ardrone.launch"/>
+    <include file="$(find med_uav_description)/launch/gazebo_ardrone.launch">
+        <arg name="wind_force" value="10.0"/>
+        <arg name="wind_start" default="5.0"/>
+        <arg name="wind_duration" default="10.0"/>
+        <arg name="wind_direction_x" default="0.0"/>
+        <arg name="wind_direction_y" default="0.0"/>
+        <arg name="wind_direction_z" default="1.0"/>
+    </include>
 
 </launch>
