@@ -2,6 +2,9 @@
 
 <robot name="ardrone" xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:property name="namespace" value="$(arg namespace)" />
+  <xacro:property name="wind_force" value="$(arg wind_force)" />
+  <xacro:property name="wind_start" value="$(arg wind_start)" />
+  <xacro:property name="wind_duration" value="$(arg wind_duration)" />
 
   <!-- Instantiate ardrone "mechanics" -->
   	<xacro:include filename="$(find med_uav_description)/urdf/ardrone_base.urdf.xacro" />
@@ -81,9 +84,9 @@
 	      <windForceMean>0</windForceMean>
 	      <windForceVariance>0.0</windForceVariance>
 	      <windGustDirection>1 1 -0.3</windGustDirection>
-	      <windGustStart>10</windGustStart>
-	      <windGustDuration>10</windGustDuration>
-	      <windGustForceMean>0</windGustForceMean>
+	      <windGustStart>$(arg wind_start)</windGustStart>
+	      <windGustDuration>$(arg wind_duration)</windGustDuration>
+	      <windGustForceMean>$(arg wind_force)</windGustForceMean>
 	      <windGustForceVariance>0</windGustForceVariance>
 	    </plugin>
 	</gazebo>
