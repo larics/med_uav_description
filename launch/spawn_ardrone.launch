@@ -5,7 +5,7 @@
   <arg name="tf_prefix" default="$(arg name)"/>
   <arg name="x" default="0.0"/>
   <arg name="y" default="0.0"/>
-  <arg name="z" default="0.02"/>
+  <arg name="z" default="0.031"/>
   <arg name="wind_force" default="10.0"/>
   <arg name="wind_start" default="10.0"/>
   <arg name="wind_duration" default="10.0"/>

@@ -100,7 +100,7 @@
     </link>
     <joint name="laser1D_joint" type="fixed">
       <!--<axis xyz="0 0 1" />-->
-      <origin xyz="0.19 0 0.031" rpy="0 0 0"/>
+      <origin xyz="0.111 0 0.0217" rpy="0 0 0"/>
       <parent link="base_link"/>
       <child link="laser1D_link"/>
     </joint>
