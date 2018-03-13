@@ -1,7 +1,7 @@
 <launch>
     
     <!-- Launch UAV-->
-    <include file="$(find med_uav_description)/launch/gazebo_ardrone.launch">
+    <include file="$(find med_uav_description)/launch/gazebo_bebop.launch">
     	<arg name="wind_force" value="0.0"/>
     </include>
     <!-- Spawn wind turbine -->
