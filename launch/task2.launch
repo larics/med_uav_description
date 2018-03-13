@@ -1,6 +1,0 @@
-<launch>
-    
-    <!-- Launch UAV with controllers -->
-    <include file="$(find med_uav_description)/launch/gazebo_ardrone.launch"/>
-
-</launch>
