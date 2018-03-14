@@ -6,7 +6,7 @@
   <arg name="x" default="0.0"/>
   <arg name="y" default="0.0"/>
   <arg name="z" default="0.031"/>
-  <arg name="wind_force" default="10.0"/>
+  <arg name="wind_force" default="0.0"/>
   <arg name="wind_start" default="5.0"/>
   <arg name="wind_duration" default="10.0"/>
   <arg name="wind_direction_x" default="1.0"/>

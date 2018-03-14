@@ -137,7 +137,7 @@
   </gazebo>
 
   <!-- Camera properties -->
-  <!--xacro:property name="camera_link" value="0.05" />
+  <xacro:property name="camera_link" value="0.05" />
   <xacro:property name="camera_inertia">
     <inertia
     ixx="1e-12"
@@ -154,6 +154,6 @@
     parent="base_link">
     <origin xyz="0.111 0 0.0217" rpy="0 0 0"/>
     <xacro:insert_block name="camera_inertia"/>
-  </xacro:cam-->
+  </xacro:cam>
 
 </robot>

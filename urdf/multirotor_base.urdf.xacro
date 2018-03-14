@@ -29,7 +29,7 @@
       <collision>
         <origin xyz="0 0 0.0" rpy="0 0 0" />
         <geometry>
-          <box size="${body_width} ${body_width} ${body_height}" />
+          <box size="${body_width} ${body_width} ${body_height}" /> <!-- [m] [m] [m] -->
         </geometry>
       </collision>
     </link>
@@ -91,7 +91,7 @@
       </visual>
       <collision>
         <geometry>
-          <cylinder length="0.005" radius="${radius_rotor}" />
+          <cylinder length="0.005" radius="${radius_rotor}" /> <!-- [m] -->
         </geometry>
       </collision>
     </link>
