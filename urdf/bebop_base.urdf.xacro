@@ -20,6 +20,7 @@
   <xacro:property name="cos45" value="0.7071068" />
   <xacro:property name="rotor_drag_coefficient" value="8.06428e-05" />
   <xacro:property name="rolling_moment_coefficient" value="0.000001" />
+  <xacro:property name="PI" value="3.14" />
 
   <!-- Property Blocks -->
   <xacro:property name="body_inertia">
@@ -134,5 +135,25 @@
   <gazebo reference="base_link">
     <dampingFactor>0.001</dampingFactor>
   </gazebo>
+
+  <!-- Camera properties -->
+  <!--xacro:property name="camera_link" value="0.05" />
+  <xacro:property name="camera_inertia">
+    <inertia
+    ixx="1e-12"
+    iyy="1e-12"
+    izz="1e-12"
+    ixy="0.0" ixz="0.0" iyz="0.0" />
+  </xacro:property>
+  <xacro:property name="camera_mass" value="1e-5"/>
+
+  <xacro:cam
+    namespace="$(arg namespace)"
+    camera_link="${camera_link}"
+    camera_mass="${camera_mass}"
+    parent="base_link">
+    <origin xyz="0.111 0 0.0217" rpy="0 0 0"/>
+    <xacro:insert_block name="camera_inertia"/>
+  </xacro:cam-->
 
 </robot>
