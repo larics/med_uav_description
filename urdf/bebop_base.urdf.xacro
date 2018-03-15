@@ -26,7 +26,7 @@
   <xacro:property name="body_inertia">
     <!--inertia ixx="0.00528525" ixy="0.0" ixz="0.0" iyy="0.00528250" iyz="0.0" izz="0.0104" /--> <!-- [kg*m^2] [kg*m^2] [kg*m^2] [kg*m^2] [kg*m^2] [kg*m^2] -->
     <!-- tum_sim -->    
-    <inertia ixx="0.01152" ixy="0.0" ixz="0.0" iyy="0.01152" iyz="0.0" izz="0.0218" />
+    <inertia ixx="0.00389" ixy="0.0" ixz="0.0" iyy="0.00389" iyz="0.0" izz="0.0078" />
   </xacro:property>
   
   <!-- inertia of a single rotor, assuming it is a cuboid. Height=5mm, width=31mm -->
