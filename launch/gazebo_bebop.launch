@@ -20,12 +20,12 @@
         <arg name="x" value="$(arg x)"/>
         <arg name="y" value="$(arg y)"/>
         <arg name="z" value="$(arg z)"/>
-        <arg name="wind_force" default="$(arg wind_force)"/>
-        <arg name="wind_start" default="$(arg wind_start)"/>
-        <arg name="wind_duration" default="$(arg wind_duration)"/>
-        <arg name="wind_direction_x" default="$(arg wind_direction_x)"/>
-        <arg name="wind_direction_y" default="$(arg wind_direction_y)"/>
-        <arg name="wind_direction_z" default="$(arg wind_direction_z)"/>
+        <arg name="wind_force" value="$(arg wind_force)"/>
+        <arg name="wind_start" value="$(arg wind_start)"/>
+        <arg name="wind_duration" value="$(arg wind_duration)"/>
+        <arg name="wind_direction_x" value="$(arg wind_direction_x)"/>
+        <arg name="wind_direction_y" value="$(arg wind_direction_y)"/>
+        <arg name="wind_direction_z" value="$(arg wind_direction_z)"/>
     </include>
 
 </launch>
