@@ -1,0 +1,52 @@
+<launch>
+    <arg name="name" default="bebop" />
+    <arg name="x" default="0.0" />
+    <arg name="y" default="0.0" />
+    <arg name="z" default="0.02" />
+    <arg name="roll" default="0.0"/>
+    <arg name="pitch" default="0.0"/>
+    <arg name="yaw" default="0.0"/>
+    <arg name="wind_force" default="10.0"/>
+    <arg name="wind_start" default="5.0"/>
+    <arg name="wind_duration" default="0.0"/>
+    <arg name="wind_direction_x" default="0.0"/>
+    <arg name="wind_direction_y" default="0.0"/>
+    <arg name="wind_direction_z" default="0.0"/>
+    <arg name="start_gazebo" default="true"/>
+    <arg name="debug" default="false"/>
+    <arg name="gui" default="true"/>
+    <arg name="paused" default="false" />
+    <arg name="use_sim_time" default="true"/>
+    <arg name="headless" default="true" />
+    
+    <!-- Launch gazebo -->
+    <group if="$(arg start_gazebo)">
+        <include file="$(find gazebo_ros)/launch/empty_world.launch"> 
+            <arg name="debug" value="$(arg debug)" />
+            <arg name="gui" value="$(arg gui)" />
+            <arg name="paused" value="$(arg paused)"/>
+            <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+            <arg name="headless" value="$(arg headless)"/>
+            <!-- If you saved world into existing gazebo worls it's possible to use it by changing world name and location of saved file-->
+            <arg name="world_name" value="$(find mmuav_gazebo)/worlds/wide_maze.world"/>
+        </include>
+    </group>
+
+    
+    <include file="$(find med_uav_description)/launch/spawn_bebop.launch">
+        <arg name="name" value="$(arg name)" />
+        <arg name="x" value="$(arg x)"/>
+        <arg name="y" value="$(arg y)"/>
+        <arg name="z" value="$(arg z)"/>
+        <arg name="roll" value="$(arg roll)"/>
+        <arg name="pitch" value="$(arg pitch)"/>
+        <arg name="yaw" value="$(arg yaw)"/>
+        <arg name="wind_force" value="$(arg wind_force)"/>
+        <arg name="wind_start" value="$(arg wind_start)"/>
+        <arg name="wind_duration" value="$(arg wind_duration)"/>
+        <arg name="wind_direction_x" value="$(arg wind_direction_x)"/>
+        <arg name="wind_direction_y" value="$(arg wind_direction_y)"/>
+        <arg name="wind_direction_z" value="$(arg wind_direction_z)"/>
+    </include>
+
+</launch>

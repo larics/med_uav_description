@@ -28,10 +28,8 @@
             <arg name="use_sim_time" value="$(arg use_sim_time)"/>
             <arg name="headless" value="$(arg headless)"/>
             <!-- If you saved world into existing gazebo worls it's possible to use it by changing world name and location of saved file-->
-            <arg name="world_name" value="$(find mmuav_gazebo)/worlds/wide_maze.world"/>
         </include>
     </group>
-
     
     <include file="$(find med_uav_description)/launch/spawn_bebop.launch">
         <arg name="name" value="$(arg name)" />
